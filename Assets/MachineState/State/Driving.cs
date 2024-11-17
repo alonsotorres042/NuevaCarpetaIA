@@ -45,6 +45,14 @@ public class Driving : StateWait
         {
             place = nextNode.transform; // Asigna el siguiente nodo como destino
             currentNode = nextNode; // Actualiza el nodo actual
+
+            // **Conectar con AutoController**
+            AutoController autoController = GetComponent<AutoController>();
+            if (autoController != null)
+            {
+                autoController.SetTargetNode(nextNode.transform); // Actualiza el nodo en AutoController
+            }
+
             stateNode = StateNode.MoveTo; // Cambia al estado MoveTo
             Debug.Log($"Driving Enter: Nodo asignado como destino: {nextNode.name}");
         }
@@ -54,6 +62,7 @@ public class Driving : StateWait
             _MachineState.ActiveState(StateType.Idle);
         }
     }
+
 
     public override void Execute()
     {
