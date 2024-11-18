@@ -46,8 +46,14 @@ public class StateWait : StateMove
 
 
         WaitTime = false;
-        StopCoroutine(coroutine);
+        //StopCoroutine(coroutine);
         //coroutine=null;
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null; // Limpia la referencia después de detenerlo
+        }
+
     }
     public override void Execute()
     {
