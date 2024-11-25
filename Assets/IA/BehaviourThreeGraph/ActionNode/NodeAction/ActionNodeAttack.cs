@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/Action")]
 public class ActionNodeAttack : ActionNodeAction
 {
-     
-
     public override void OnAwake()
     {
         base.OnAwake();
@@ -19,12 +17,9 @@ public class ActionNodeAttack : ActionNodeAction
         SwitchUnit();
 
         return TaskStatus.Success;
-
     }
     void SwitchUnit()
     {
-
-
         switch (_UnitGame)
         {
             case UnitGame.Zombie:
@@ -46,8 +41,5 @@ public class ActionNodeAttack : ActionNodeAction
             default:
                 break;
         }
-
-
-
     }
 }

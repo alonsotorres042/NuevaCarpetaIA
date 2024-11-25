@@ -5,8 +5,6 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("MyAI/View")]
 public class ActionNodeNotViewAllied: ActionNodeView
 {
-     
-
     public override void OnAwake()
     {
         base.OnAwake();
@@ -18,6 +16,4 @@ public class ActionNodeNotViewAllied: ActionNodeView
 
         return TaskStatus.Failure;
     }
-
-
 }
